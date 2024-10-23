@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Inscriptional+Pahlavi&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Inscriptional+Pahlavi&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --Background: #f6eff1;
+  --Text: #1e1017;
+  --Primary: #5d3247;
+  --Secondary: #c8a198;
+  --Accent: #8b614b;
+}
+
+body.dark-mode {
+  --Background: #10090b;
+  --Text: #efe1e8;
+  --Primary: #cda2b7;
+  --Secondary: #674037;
+  --Accent: #b48a74;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--Background);
+  color: var(--Text);
+  height: 100vh;
+  width: 100vw;
+  min-width: 360px;
+}
+
+nav {
+  display: flex;
+  margin: auto;
+  z-index: 5;
+  padding: 20px 0;
+}
+
+nav ul {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  list-style-type: none;
+  font-size: 1.2rem;
+}
+
+nav ul li {
+  cursor: pointer;
+  padding: 0.5rem;
+  font-weight: 600;
+  color: var(--Text);
+}
+
+#Light-mode-on {
+  background-color: var(--Primary);
+  color: var(--Text);
+}
+
+#Dark-mode-on {
+  background-color: var(--Primary-Dark);
+  color: var(--Text-Dark);
+  display: none;
+}
+
+main {
+  width: 100%;
+  padding: 1rem;
+}
+
+.text {
+  color: var(--Text);
+  font-size: min(6vw, 2rem);
+}
+
+button {
+  background-color: var(--Secondary);
+  color: var(--Text);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--Accent);
+}
