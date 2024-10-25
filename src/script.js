@@ -1,4 +1,3 @@
-require('dotenv').config()
 const paragraph = document.querySelector('.text')
 const button = document.getElementById("Button")
 
@@ -15,7 +14,7 @@ gsap.from(nav, {
 })
 gsap.from(paragraph, {
   opacity: 0,
-  duration: 0.5,
+  duration: 1,
   ease: "power.in",
   y: 25,
 })
@@ -132,6 +131,7 @@ function scramblePhrase(phrase) {
   }).join(' ');
 }
 
+const API_Key = API_KEY
 //News API
 button.addEventListener("click",
   function generateText() {
@@ -139,7 +139,7 @@ button.addEventListener("click",
     const options = {
       method: 'GET',
       headers: {
-        'x-api-key': 'API_Key'
+        'x-api-key': API_Key
       }
     };
 
@@ -148,6 +148,8 @@ button.addEventListener("click",
     fetch(url, options)
       .then(response => response.json())
       .then(data => {
+        console.log(API_Key)
+        console.log(data.articles)
         let summary = data.articles[Math.floor(Math.random() * 20)].summary
         paragraph.textContent = scramblePhrase(summary)
       })
