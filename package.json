@@ -1,0 +1,22 @@
+{
+  "name": "typoglycemia",
+  "version": "1.0.0",
+  "description": "This is a web app that scrambles the middle letters of words while keeping the first and last letters unchanged, making the text still readable. The app fetches news articles related to Morocco using the [Newscatcher API](https://www.newscatcherapi.com/) and applies the typoglycemia effect to the content.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "live": "live-server",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,10 +1,10 @@
 const paragraph = document.querySelector('.text')
 const button = document.getElementById("Button")
-
 const nav = document.getElementsByTagName("li")
 const aboutButton = document.getElementById("About")
 const aboutPage = document.getElementById("about-page")
 
+// Animations
 gsap.from(nav, {
   opacity: 0,
   duration: 1,
@@ -27,6 +27,7 @@ gsap.from(button, {
 })
 aboutPage.style.display = "none";
 
+// Show / hide About Page
 aboutButton.addEventListener("click", function() {
   if (aboutPage.style.display === "none") {
     aboutPage.style.display = "block";
@@ -52,6 +53,7 @@ aboutButton.addEventListener("click", function() {
   }
 });
 
+// Dark / Ligh mode Toggle
 document.addEventListener('DOMContentLoaded', function() {
   const darkModeButton = document.getElementById('Dark-mode-on');
   const lightModeButton = document.getElementById('Light-mode-on');
@@ -78,7 +80,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Switch to light mode
   darkModeButton.addEventListener('click', function() {
     body.classList.remove('dark-mode');
     body.classList.add('light-mode');
@@ -86,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem('theme', 'light');
   });
 
-  // Switch to dark mode
   lightModeButton.addEventListener('click', function() {
     body.classList.remove('light-mode');
     body.classList.add('dark-mode');
@@ -131,8 +131,9 @@ function scramblePhrase(phrase) {
   }).join(' ');
 }
 
-const API_Key = API_KEY
 //News API
+require('dotenv').config()
+const API_Key = process.env.KEY_API
 button.addEventListener("click",
   function generateText() {
 
