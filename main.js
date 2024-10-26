@@ -130,10 +130,9 @@ function scramblePhrase(phrase) {
     return scrambleWord(word) + punctuation;
   }).join(' ');
 }
-
 //News API
-require('dotenv').config()
-const API_Key = process.env.KEY_API
+
+const API_Key = import.meta.env.VITE_API_KEY
 button.addEventListener("click",
   function generateText() {
 
@@ -149,8 +148,6 @@ button.addEventListener("click",
     fetch(url, options)
       .then(response => response.json())
       .then(data => {
-        console.log(API_Key)
-        console.log(data.articles)
         let summary = data.articles[Math.floor(Math.random() * 20)].summary
         paragraph.textContent = scramblePhrase(summary)
       })
